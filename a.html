@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuakeQuest</title>
+</head>
+<style>
+    #container {
+			margin: 0px auto;
+			width: 500px;
+			height: 375px;
+			border: 10px #333 solid;
+		}
+
+		#videoElement {
+			width: 500px;
+			height: 375px;
+			background-color: #666;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<video autoplay="true" id="videoElement">
+
+		</video>
+	</div>
+	<script>
+
+		var video = document.querySelector("#videoElement");
+		if (navigator.mediaDevices.getUserMedia) {
+			console.log('has getUserMedia');
+			navigator.mediaDevices.getUserMedia({ video: true })
+				.then(function (stream) {
+					video.srcObject = stream;
+				})
+				.catch(function (error) {
+					console.log("Something went wrong!");
+				});
+		}
+
+	</script>
+</body>
+</style>
+<h1>
+
+    
+</h1>
+<body>
+    
+</body>
+<script>
+    setTimeout(function () {
+        var iframes = document.querySelectorAll("iframe")
+        console.log(iframes)
+        iframes[0].setAttribute("allow", "microphone; camera")
+        var y = iframes[0].parentNode;
+        var x = iframes[0]
+        x.setAttribute("allow", "microphone; camera");
+        y.appendChild(x);
+    }, 3000);
+
+</script>
+</html>
+
+
